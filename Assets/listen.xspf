@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+    <title>Radio ZuSa</title>
+    <info>http://www.zusa.de</info>
+    <trackList>
+        <track><location>http://funkturm.radio-zusa.net:8000/opus</location></track>
+    </trackList>
+</playlist>

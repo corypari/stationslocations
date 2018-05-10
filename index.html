@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RadioShifter</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.6.4/build/ol.js"></script>
+    <script src="p5_lib/p5.min.js"></script>
+    <script src="p5_lib/p5.dom.min.js"></script>
+    <script src="p5_lib/p5.sound.min.js"></script>
+    <script src="p5_lib/p5.sound.js"></script>
+    <script src="sketch.js"></script>
+    <script src='p5_lib/p5.geolocation.js'></script>
+    <script src='p5_lib/p5-sliders.js'></script>
+    <script src="https://unpkg.com/mappa-mundi/dist/mappa.min.js" type="text/javascript"></script>
+    <style> body {padding: 0; margin: 0;}
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+} </style>
+  </head>
+  <body style="background-color:powderblue;">
+    <h1 align='center'>Stations, Locations</h1>
+    <h3 align='center'>Cory Paringer</h3>
+    <p align='center'>Description of Piece</p>
+    <p align='center'><b>Please make sure you are using a browser such as Firefox, Chrome, or Safari. Ensure you accept the "Allow Location Access" notification once visiting the webpage.</b></p>
+    <div id="testDiv" align='center'></div>
+    <div id="dist" align='center'></div>
+    <div id="newStation" align='center'>Station 1 (Requires more movement)</div>
+    <div id="newStationTwo" align='center'>Station 2 (Requires more movement)</div>
+    <div id="newStationThree" align='center'>Station 3 (Requires more movement)</div>
+    <div id="newStationThree" align='center'>Station 4 (Requires more movement)</div>
+    <!-- counter -->
+    <img src="Assets/tower.png" alt="Radio Tower" class="center">
+    <div align='center'><a href='http://www.free-website-hit-counter.com'><img src='http://www.free-website-hit-counter.com/c.php?d=4&id=117719&s=55' border='0' title='free website hit counter'></a><br / ></div>
+
+    <!-- <div id="map" class="map"></div>
+    <div id="info" style="display: none;"></div>
+    <label for="track">
+      track position
+      <input id="track" type="checkbox"/>
+    </label>
+    <p>
+      position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
+      altitude : <code id="altitude"></code>&nbsp;&nbsp;
+      altitude accuracy : <code id="altitudeAccuracy"></code>&nbsp;&nbsp;
+      heading : <code id="heading"></code>&nbsp;&nbsp;
+      speed : <code id="speed"></code>
+    </p>
+    <script>
+      var view = new ol.View({
+        center: [0, 0],
+        zoom: 2
+      });
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        controls: ol.control.defaults({
+          attributionOptions: {
+            collapsible: false
+          }
+        }),
+        view: view
+      });
+
+      var geolocation = new ol.Geolocation({
+        projection: view.getProjection()
+      });
+
+      function el(id) {
+        return document.getElementById(id);
+      }
+
+      el('track').addEventListener('change', function() {
+        geolocation.setTracking(this.checked);
+      });
+
+      // update the HTML page when the position changes.
+      geolocation.on('change', function() {
+        el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
+        el('altitude').innerText = geolocation.getAltitude() + ' [m]';
+        el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
+        el('heading').innerText = geolocation.getHeading() + ' [rad]';
+        el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
+      });
+
+      // handle geolocation error.
+      geolocation.on('error', function(error) {
+        var info = document.getElementById('info');
+        info.innerHTML = error.message;
+        info.style.display = '';
+      });
+
+      var accuracyFeature = new ol.Feature();
+      geolocation.on('change:accuracyGeometry', function() {
+        accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+      });
+
+      var positionFeature = new ol.Feature();
+      positionFeature.setStyle(new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 6,
+          fill: new ol.style.Fill({
+            color: '#3399CC'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#fff',
+            width: 2
+          })
+        })
+      }));
+
+      geolocation.on('change:position', function() {
+        var coordinates = geolocation.getPosition();
+        positionFeature.setGeometry(coordinates ?
+          new ol.geom.Point(coordinates) : null);
+      });
+
+      new ol.layer.Vector({
+        map: map,
+        source: new ol.source.Vector({
+          features: [accuracyFeature, positionFeature]
+        })
+      });
+    </script> -->
+  </body>
+</html>
